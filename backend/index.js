@@ -11,8 +11,9 @@ const port = process.env.PORT || 8000   // if env cannot be accessed, default is
 MongoClient.connect(
     process.env.RESTREVIEWS_DB_URI,
     {
-        wtimeout: 2500,
-        useNewUrlParser: true
+        wtimeoutMS: 2500,
+        useNewUrlParser: true,
+        useUnifiedTopology: true
     }
 )
 
