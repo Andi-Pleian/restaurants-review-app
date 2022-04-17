@@ -1,1 +1,35 @@
 Add IP address when the server cannot connect to mongoDB.
+
+JS Promise Object:
+    - a js Promise object contains both the producing code and calls to the consuming code
+    - syntax:
+
+        let myPromise = new Promise(function(myResolve, myReject) {
+            // "Producing Code" (May take some time)
+
+            myResolve(); // When successful
+            myReject();  // When error
+        }
+
+        // "Consuming Code" (Must wait for a fulfilled Promise)
+        myPromise.then(
+            function(value) {
+                // Code if successful
+            },
+
+            function(error) {
+                // Code if error
+            }
+        );
+    
+    - when the producing code obtains the result, it should call one of the two callback:
+        + SUCCESS => myResolve(result value)
+        + ERROR   => myReject(error object)
+    - a js Promise can be:
+        + Pending       => result is undefined
+        + Fullfilled    => result if value
+        + Rejected      => result is an error object
+    - the Promise object supports two properties (which cannot be accessed): 
+        + State 
+        + Result
+    - Promise.then() takes two arguments, a callback for success and another for failure (both are optional)
