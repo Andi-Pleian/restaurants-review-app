@@ -8,12 +8,19 @@ import RestaurantsList from "./components/restaurants-list";
 import Login from "./components/login";
 
 function App() {
+
+  // state of the user
+  // react.useState => create state variable (null is initial value)
+  // we use function setUser to update the user state
   const [user, setUser] = React.useState(null);
 
+  // we pass the user, but the default is null
   async function login(user = null) {
+    // the user var will be the user that we pass to the function
     setUser(user);
   }
 
+  // make user null
   async function logout() {
     setUser(null)
   }
